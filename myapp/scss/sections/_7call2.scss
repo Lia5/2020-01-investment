@@ -1,6 +1,25 @@
 .call2 {
     padding: 79px 0 93px;
+    @media screen and (max-width: 820px) {
+        background: transparent;
+        padding: 72px 0 93px;
+
+    }
     .call__about {
         max-width: 856px;
+        @media screen and (max-width: 820px) {
+            font-size: 18px;
+            line-height: 24px;
+            letter-spacing: -0.7px;
+            color: #4bb77b;
+            margin-bottom: 45px;
+        }
+    }
+    .btn {
+        @media screen and (max-width: 820px) {
+            background: #4bb77b;
+            background: linear-gradient(to right,#4bb77b,#3bb270);
+            color: #fff;
+        }
     }
 }
