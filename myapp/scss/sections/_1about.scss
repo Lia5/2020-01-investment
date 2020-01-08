@@ -1,0 +1,36 @@
+.about {
+    padding: 170px 0 117px;
+    @media screen and (max-width: 820px) {
+        padding: 69px 0 117px;
+    }
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-right: 7%;
+    }
+    &__item {
+        width: 27%;
+        margin-bottom: 20px;
+        @media screen and (max-width: 820px) {
+            width: 46%;
+            &:nth-child(1){
+                svg {
+                    width: 31px;
+                }
+            }
+        }
+        
+    }
+    &__icon {
+        min-height: 114px;
+        display: flex;
+        margin-bottom: 10px;
+        img {
+            margin-top: auto;
+        }
+    }
+    &__text {
+        font-weight: 600;
+    }
+}

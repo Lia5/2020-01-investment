@@ -1,0 +1,15 @@
+@import "_mixins/font-face";
+
+
+
+@include font-face("Montserrat", "../fonts/Montserrat-Regular/Montserrat-Regular", 400);
+@include font-face("Montserrat", "../fonts/Montserrat-Italic/Montserrat-Italic", 400, italic);
+@include font-face("Montserrat", "../fonts/Montserrat-Medium/Montserrat-Medium", 500);
+@include font-face("Montserrat", "../fonts/Montserrat-SemiBold/Montserrat-SemiBold", 600);
+@include font-face("Montserrat", "../fonts/Montserrat-SemiBoldItalic/Montserrat-SemiBoldItalic", 600, italic);
+@include font-face("Montserrat", "../fonts/Montserrat-Bold/Montserrat-Bold", 700);
+@include font-face("Montserrat", "../fonts/Montserrat-Black/Montserrat-Black", 800); //ExtraBold
+
+@include font-face("Raleway", "../fonts/Raleway-Regular/Raleway-Regular", 400);
+@include font-face("Raleway", "../fonts/Raleway-Bold/Raleway-Bold", 700);
+@include font-face("GothamPro", "../fonts/GothamPro-Light/GothamPro-Light", 200);

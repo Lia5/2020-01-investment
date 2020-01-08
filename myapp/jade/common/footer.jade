@@ -1,0 +1,28 @@
+footer.footer
+    .wrap
+        .footer__body
+            .title.footer__name Если вы хотите 
+            .footer__items-wrap
+                .footer__items
+                    .footer__item Обеспечить себе пассивный доход
+                    .footer__item Вырваться из беличьего колеса «зарплата – траты – зарплата»
+                    .footer__item Реализовать свою мечту или достичь цели. И не одной
+                    .footer__item Избежать финансового кризиса или встречи с мошенниками
+        .footer__form 
+            .title.footer__name Оставляйте заявку <br>и получите приглашение на ближайший семинар:
+            form(action="#")
+                input(type="text" placeholder="Имя" required)
+                input(type="text" placeholder="Номер телефона" required).phone-mask
+                button
+                    a(href="#modalThank").btn.modal-open Хочу на семинар
+    .wrap
+        .footer__bottom
+            a(href="#").footer__policy Политика конфиденциальности
+            .footer__develop
+                span Разработка сайта
+                a(href="https://nox.agency/").footer__logo 
+                    img(src="img/logo-nox.png", alt="logo")
+
+script(src="libs/1.jquery/dist/jquery.min.js")
+script(src="js/scripts.min.js")
+script(src="js/common.js")
