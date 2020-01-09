@@ -20,6 +20,18 @@ $(function() {
             $(".phone-mask").mask("+38(999) 999-9999");
         });
     }
+        $("#button_submit").click(function (e){
+            e.preventDefault();
+            var numModal = $(this).attr('href');
+            var modal =  $(numModal);
+            modalWrap.removeClass('fadeOutUp');
+            modalWrap.addClass('fadeInDown');
+            modal.removeClass('disabled');
+            modal.addClass('flex');
+            $('body').addClass('body-modal-open');
+            // body.addClass('body-modal');
+        });
+        
     //popup
     if(jQuery('.modal__wrap').length) {
         let modalWrap = $('.modal__wrap');
@@ -70,6 +82,16 @@ $(function() {
             }
         });
     }
+    if(jQuery('.scroll-to').length) {
+        var $page = $('html, body');
+        $('.scroll-to[href*="#"]').click(function() {
+            $page.animate({
+                scrollTop: $($.attr(this, 'href')).offset().top
+            }, 400);
+            return false;
+        });
+    }
+    
 });
 
 
