@@ -39,14 +39,39 @@ $(function() {
         //popup
         $(".modal-open").click(function (e){
             e.preventDefault();
-            var numModal = $(this).attr('href');
-            var modal =  $(numModal);
-            modalWrap.removeClass('fadeOutUp');
-            modalWrap.addClass('fadeInDown');
-            modal.removeClass('disabled');
-            modal.addClass('flex');
-            $('body').addClass('body-modal-open');
-            // body.addClass('body-modal');
+
+          var btn = $(this);
+            $($(this).parent().parent()).each(function () {
+                var form = $(this);
+                form.find('.rfield').addClass('empty_field');
+
+                   // Функция проверки полей формы
+
+                    form.find('.rfield').each(function(){
+                    if($(this).val() != ''){
+                        // Если поле не пустое удаляем класс-указание
+                    $(this).removeClass('empty_field');
+
+                    if (!form.find('.empty_field').length) {
+                        var numModal = btn.attr('href');
+                        var modal =  $(numModal);
+                        modalWrap.removeClass('fadeOutUp');
+                        modalWrap.addClass('fadeInDown');
+                        modal.removeClass('disabled');
+                        modal.addClass('flex');
+                        $('body').addClass('body-modal-open');
+                        // body.addClass('body-modal');
+                        }
+                    } else {
+                        // Если поле пустое добавляем класс-указание
+                    $(this).addClass('empty_field');
+                    }
+                    });
+
+                
+
+
+            })
         });
         
         $('.modal-close').click(function (){
@@ -91,7 +116,41 @@ $(function() {
             return false;
         });
     }
-    
+    //click on form submit button - AMO
+    $('.consult__btn').on('click', function(){
+        $($(this).parent().parent()).each(function () {
+            var form = $(this);
+            form.find('.rfield').addClass('empty_field');
+
+                // Функция проверки полей формы
+
+                form.find('.rfield').each(function(){
+                if($(this).val() != ''){
+                    // Если поле не пустое удаляем класс-указание
+                $(this).removeClass('empty_field');
+
+                if (!form.find('.empty_field').length) {
+                console.log('form');
+                form = $('.consultForm');
+                jQuery.ajax({
+                    method: "POST",
+                    data: form.serialize(),
+                    // url: quizAjax.url,
+                    url: '../sendamo.php',
+                    dataType: "json",
+                    success: function (json) {
+                        // if (json.success) {
+                            // jQuery(".wizard-section").fadeOut(100);
+                            window.location.href = "/quiz-thanks/";
+                        // }
+                    }
+                });
+                }
+
+                } else {}
+                });
+        })
+    });
 });
 
 

@@ -10,10 +10,10 @@ footer.footer
                     .footer__item Избежать финансового кризиса или встречи с мошенниками
         .footer__form#consult 
             .title.footer__name Оставляйте заявку <br>и получите приглашение на ближайший семинар:
-            form(action="#")
-                input(type="text" placeholder="Имя" required)
-                input(type="text" placeholder="Номер телефона" required).phone-mask
-                button
+            form(action="#").consultForm
+                input(type="text" name="name2" placeholder="Имя" required).rfield
+                input(type="text" name="phone" placeholder="Номер телефона" required).phone-mask.rfield
+                button.consult__btn(type="submit")
                     a(href="#modalThank").btn.modal-open Хочу на семинар
     .wrap
         .footer__bottom
