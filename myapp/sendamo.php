@@ -61,12 +61,12 @@ $contact_name2       = filter_var ($_REQUEST['name2']);
 $contact_name       = filter_var ($_REQUEST['fname']);
 $contact_phone      = filter_var ($_REQUEST['phone'],FILTER_SANITIZE_NUMBER_FLOAT);
 
-$question1 	= filter_var ($_REQUEST['question1']);
-$question2 	= filter_var ($_REQUEST['question2']);
-$question3 	= filter_var ($_REQUEST['question3']);
-$question4 	= filter_var ($_REQUEST['question4']);
-$question5  = filter_var ($_REQUEST['question5']);
-$consult  = filter_var ($_REQUEST['consult']);
+// $question1 	= filter_var ($_REQUEST['question1']);
+// $question2 	= filter_var ($_REQUEST['question2']);
+// $question3 	= filter_var ($_REQUEST['question3']);
+// $question4 	= filter_var ($_REQUEST['question4']);
+// $question5  = filter_var ($_REQUEST['question5']);
+// $consult  = filter_var ($_REQUEST['consult']);
 
 
 
@@ -111,7 +111,7 @@ $utm_campaign = $_POST['utm_campaign']; if ($utm_campaign == '') { $utm_campaign
 //Служебные данные
 
 $responsible_user_id = 1; //id ответственного по сделке, контакту, компании
-//$lead_status_id = '2245699'; //id этапа продаж, куда помещать сделку
+$lead_status_id = '31243813'; //id этапа продаж, куда помещать сделку
 
 
 //АВТОРИЗАЦИЯ
@@ -184,7 +184,7 @@ foreach($amoConactsFields as $afield) {
 $leads['request']['leads']['add']=array(
   array(
     'name' => $contact_name,
-    // 'status_id' => $lead_status_id, //id статуса
+    'status_id' => $lead_status_id, //id статуса
     // 'responsible_user_id' => $responsible_user_id, //id ответственного по сделке
     //'date_create'=>1298904164, //optional
     // 'price'=>$totalPrice, #Полная стоимость заказа 
