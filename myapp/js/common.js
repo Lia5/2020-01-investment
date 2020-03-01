@@ -116,6 +116,48 @@ $(function() {
             return false;
         });
     }
+
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return(false);
+    }
+
+    $('form').find('input.utm_source').each(function() {
+        var a = getQueryVariable('utm_source');
+        if(a){
+            $(this).val(a);
+        }
+    }); 
+    $('form').find('input.utm_medium').each(function() {
+        var a = getQueryVariable('utm_medium');
+        if(a){
+            $(this).val(a);
+        }
+    });
+    $('form').find('input.utm_campaign').each(function() {
+        var a = getQueryVariable('utm_campaign');
+        if(a){
+            $(this).val(a);
+        }
+    });
+    $('form').find('input.utm_term').each(function() {
+        var a = getQueryVariable('utm_term');
+        if(a){
+            $(this).val(a);
+        }
+    });
+    $('form').find('input.utm_content').each(function() {
+        var a = getQueryVariable('utm_content');
+        if(a){
+            $(this).val(a);
+        }
+    });
+
     //click on form submit button - AMO
     $('.consult__btn').on('click', function(){
         $($(this).parent().parent()).each(function () {
